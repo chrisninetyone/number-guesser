@@ -1,38 +1,35 @@
-
-
-
-// var answer = Math.floor(Math.random() * 25 + 1);
-var answer = 5
-
-
+var answer = Math.floor(Math.random() * 100 + 1);
+// var answer = 5
 
 function clickEvent() {
-  var guess = parseInt(document.getElementById('user-input').value);
-  var numberDisplay = document.getElementById('number-guess');
-  var displayAnswer = document.getElementById('display');
+  var guess = parseInt(document.querySelector('.user-input').value);
+  var numberDisplay = document.querySelector('.number-guess');
+  var displayAnswer = document.querySelector('.display');
 
   numberDisplay.innerHTML = guess;
-  if (guess > answer) {
+  if (guess > answer && guess <= 100) {
     displayAnswer.innerHTML = "That is too high";
   }
-  else if (guess < answer) {
+  else if (guess < answer && guess >= 1) {
     displayAnswer.innerHTML = "That is too low";
-  }
-  else {
+  } else if (guess <= 0 || guess >= 101) {
+    alert("Value must be between 1 and 100");
+  } else {
     displayAnswer.innerHTML = "BOOM!";
-  }
 }
-document.getElementById('guess').addEventListener("click" , clickEvent);
-
-
-//Make a function to clear input
-function clearInput() {
-  guess=0;
 }
-
-//eventListener for clear
-
+document.getElementById('guess').addEventListener("click", clickEvent);
 
 
-//Make Clear button work, disable if there is nothing to clear
-//Make Reset button work, disable if there is nothing to reset
+document.getElementById('clear').addEventListener("click", function clearInput() {
+  document.querySelector('.user-input').value='';
+})
+
+document.getElementById('reset').addEventListener("click", function resetField() {
+  document.querySelector('.number-guess').innerHTML   = '';
+  document.querySelector('.display').innerHTML = '';
+})
+
+
+//Clear button disable if there is nothing to clear
+//Reset button disable if there is nothing to reset

@@ -1,23 +1,21 @@
 <head>
 
 </head>
+<h1> Number Guesser </h1>
+
 <body>
-    <input id="user-input" type="number" min=0 max=100 placeholder="Enter your guess"/>
+    <input class="user-input" type="number" min=0 max=100 placeholder="Enter your guess"/>
     <br>
     <button id="guess"> Guess </button>
     <button id="clear" type="reset" value=Clear>Clear</button>
 
 
-  <div> Your last guess was:
-
-    <p id="number-guess"></p>
-
-  </div>
-  <p id="display"></p>
+<div> Your last guess was:
+    <p class="number-guess"></p>
+    <p class="display"></p>
+</div>
   <p>
-    <button id="reset">
-      Reset
-    </button>
+    <button id="reset" type="reset">Reset</button>
   </p>
   <script type="text/javascript" src='index.js'>
   </script>
