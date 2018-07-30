@@ -15,7 +15,7 @@ function clickEvent() {
   } else if (guess <= 0 || guess >= 101) {
     alert("Value must be between 1 and 100");
   } else {
-    displayAnswer.innerHTML = "BOOM!";
+    displayAnswer.innerHTML = "Correct Answer!";
 }
 }
 document.getElementById('guess').addEventListener("click", clickEvent);
